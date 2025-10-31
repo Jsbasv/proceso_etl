@@ -1,9 +1,9 @@
 import pdfplumber
 import os
 
-path = "/C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
 
-output_path = "C:/Users/sebastian.velez/Desktop/"
+path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
+output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.txt"
 
 
 def extraer_texto_pdf(ruta_pdf: str) -> str | None:
@@ -65,6 +65,7 @@ if __name__ == "__main__":
     print(f"Iniciando extracción de: {MI_PDF}")
 
     # Llamamos a nuestra función de extracción
+    print(MI_PDF)
     texto_bruto = extraer_texto_pdf(MI_PDF)
 
     if texto_bruto:
