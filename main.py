@@ -1,6 +1,10 @@
 import pdfplumber
 import os
 
+path = "/C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
+
+output_path = "C:/Users/sebastian.velez/Desktop/"
+
 
 def extraer_texto_pdf(ruta_pdf: str) -> str | None:
     """
@@ -52,10 +56,10 @@ def extraer_texto_pdf(ruta_pdf: str) -> str | None:
 if __name__ == "__main__":
     # --- CONFIGURACIÓN ---
     # !! CAMBIA ESTO por la ruta a tu PDF
-    MI_PDF = "temario_git.pdf"
+    MI_PDF = path
 
     # Archivo donde guardaremos el texto en crudo (Práctica recomendada)
-    ARCHIVO_SALIDA_TXT = "texto_extraido.txt"
+    ARCHIVO_SALIDA_TXT = output_path
     # ---------------------
 
     print(f"Iniciando extracción de: {MI_PDF}")
