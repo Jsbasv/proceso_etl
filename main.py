@@ -2,6 +2,10 @@ import pdfplumber
 import os
 
 
+path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
+output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.md"
+
+
 def extraer_texto_pdf(ruta_pdf: str) -> str | None:
     """
     Extrae el texto completo de un archivo PDF.
@@ -52,15 +56,16 @@ def extraer_texto_pdf(ruta_pdf: str) -> str | None:
 if __name__ == "__main__":
     # --- CONFIGURACIÓN ---
     # !! CAMBIA ESTO por la ruta a tu PDF
-    MI_PDF = "temario_git.pdf"
+    MI_PDF = path
 
     # Archivo donde guardaremos el texto en crudo (Práctica recomendada)
-    ARCHIVO_SALIDA_TXT = "texto_extraido.txt"
+    ARCHIVO_SALIDA_TXT = output_path
     # ---------------------
 
     print(f"Iniciando extracción de: {MI_PDF}")
 
     # Llamamos a nuestra función de extracción
+    print(MI_PDF)
     texto_bruto = extraer_texto_pdf(MI_PDF)
 
     if texto_bruto:
@@ -80,6 +85,6 @@ if __name__ == "__main__":
             print("-----------------------------------------------")
 
         except IOError as e:
-            print(f"Error al guardar el archivo .txt: {e}")
+            print(f"Error al guardar el archivo .md: {e}")
     else:
         print("No se pudo extraer texto del PDF.")
