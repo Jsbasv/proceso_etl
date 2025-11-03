@@ -3,11 +3,7 @@ import os
 
 
 path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
-<<<<<<< HEAD
-output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.txt"
-=======
 output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.md"
->>>>>>> feature-markdown
 
 
 def extraer_texto_pdf(ruta_pdf: str) -> str | None:
