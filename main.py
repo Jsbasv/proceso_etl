@@ -3,7 +3,11 @@ import os
 
 
 path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
+<<<<<<< HEAD
 output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.txt"
+=======
+output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.md"
+>>>>>>> feature-markdown
 
 
 def extraer_texto_pdf(ruta_pdf: str) -> str | None:
@@ -85,6 +89,6 @@ if __name__ == "__main__":
             print("-----------------------------------------------")
 
         except IOError as e:
-            print(f"Error al guardar el archivo .txt: {e}")
+            print(f"Error al guardar el archivo .md: {e}")
     else:
         print("No se pudo extraer texto del PDF.")
