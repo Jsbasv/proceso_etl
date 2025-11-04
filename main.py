@@ -1,5 +1,6 @@
 import pdfplumber
 import os
+from utils import tokenize_page
 
 
 path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
@@ -68,6 +69,7 @@ if __name__ == "__main__":
     print(MI_PDF)
     texto_bruto = extraer_texto_pdf(MI_PDF)
 
+    # Si el texto se ha extraido correctamente
     if texto_bruto:
         # --- PASO CLAVE (Prueba y Error) ---
         # Guardamos el texto en crudo en un .txt.
@@ -83,6 +85,16 @@ if __name__ == "__main__":
             print("\n--- Vista Previa (primeros 500 caracteres) ---")
             print(texto_bruto[:500] + "...")
             print("-----------------------------------------------")
+
+            # --- Tokenización ---
+            print("\nTokenizando el texto...")
+            tokens = tokenize_page(texto_bruto)
+            print(f"Se encontraron {len(tokens)} tokens.")
+
+            # Mostramos una vista previa de los tokens
+            print("\n--- Vista Previa (primeros 20 tokens) ---")
+            print(tokens[:20])
+            print("-------------------------------------------")
 
         except IOError as e:
             print(f"Error al guardar el archivo .md: {e}")
