@@ -2,9 +2,14 @@ import pdfplumber
 import os
 from utils import tokenize_page, structure_text_to_dict
 
-
-path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
-output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.md"
+"""
+Poner ruta de entrada y ruta de salida
+Ejemplo:
+    path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
+    output_path = "C:/Users/sebastian.velez/Desktop/texto_extraido.md"
+"""
+path = " "
+output_path = " "
 
 
 def extraer_texto_pdf(ruta_pdf: str) -> str | None:
