@@ -1,6 +1,6 @@
 import pdfplumber
 import os
-from utils import tokenize_page
+from utils import tokenize_page, structure_text_to_dict
 
 
 path = "C:/Users/sebastian.velez/Desktop/gitcurso.pdf"
@@ -95,6 +95,19 @@ if __name__ == "__main__":
             print("\n--- Vista Previa (primeros 20 tokens) ---")
             print(tokens[:20])
             print("-------------------------------------------")
+
+            # --- Estructuración de datos ---
+            print("\nEstructurando el texto y los tokens en un diccionario...")
+            structured_pdf_data = structure_text_to_dict(texto_bruto, tokens)
+            print("\n--- Datos PDF Estructurados ---")
+            # Para evitar imprimir un texto muy largo, mostraremos una parte del raw_text
+            print(
+                f"Raw Text (primeros 200 chars): {structured_pdf_data['raw_text'][:200]}..."
+            )
+            print(
+                f"Tokenized Text (primeros 20 tokens): {structured_pdf_data['tokenized_text'][:20]}"
+            )
+            print("-------------------------------")
 
         except IOError as e:
             print(f"Error al guardar el archivo .md: {e}")
